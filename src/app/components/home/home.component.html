@@ -1,10 +1,39 @@
 <app-header></app-header>
-<div class="jumbotron jumbotron-fluid" style="background-color:cyan;">
-    <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-</div>
 <div class="container">
-    <pre>{{ user | json }}</pre>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <h3>My github account</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-3 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">account</h4>
+                </div>
+                <img src="{{ user.avatar_url }}" class="rounded-circle card-img-top" alt="{{ user.login }}" width="25px">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ user.login }}</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-left">repositories</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>

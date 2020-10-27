@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../services/github.service';
+import { environment } from '../../../environments/environment';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +10,12 @@ import { GithubService } from '../services/github.service';
 })
 export class HomeComponent implements OnInit {
   
-  user: any;
+  user: User;
 
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
-    this.githubService.getUserRepositories('kelvinMakamu').subscribe((detail) => {
+    this.githubService.getUserDetails(environment.USER).subscribe((detail) => {
       this.user = detail;
     });
   }
