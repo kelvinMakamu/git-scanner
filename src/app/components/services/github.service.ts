@@ -10,6 +10,7 @@ import { Repository } from '../models/repository';
   providedIn: 'root'
 })
 export class GithubService {
+
   repos: Repository[];
 
   getUserDetails(username: string): Observable<User>{
@@ -17,18 +18,15 @@ export class GithubService {
     return this.httpClient.get<User>(`${environment.API_URL}/users/${username}`,{ headers });
   }
 
-  getUserRepositories(username: string): Observable<Repository>{
+  getUserRepositories(username: string): Observable<Repository[]>{
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
-    this.httpClient.get<any>(`${environment.API_URL}/users/${username}/repos`,{ headers })
-    .subscribe((repos) => {
-      this.repos = repos;
-    });
+    this.httpClient.get<Repository[]>(`${environment.API_URL}/users/${username}/repos`,{ headers });
   }
 
-  getRepository(repo: string): Observable<any>{
+  getRepository(repo: string): Observable<Repository[]>{
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
     let params  = new HttpParams().set('q',repo);
-    return this.httpClient.get<any>(`${environment.API_URL}/repositories`,{ headers, params });
+    return this.httpClient.get<Repository[]>(`${environment.API_URL}/repositories`,{ headers, params });
   }
 
   constructor(private httpClient: HttpClient) { }
