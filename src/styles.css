@@ -25,3 +25,9 @@ input:focus, textarea:focus, input.form-control:focus {
     padding:3% 3% 3% 3%;
     box-shadow: 0px 2px 3px #dedede;
 }
+
+.card{
+    color: #40395c !important;
+    padding: 2% 2% 2% 2% !important;
+    box-shadow: 0px 2px 3px #dedede;
+}

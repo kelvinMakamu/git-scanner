@@ -1,9 +1,3 @@
-.card{
-    color: #40395c !important;
-    padding: 2% 2% 2% 2% !important;
-    box-shadow: 0px 2px 3px #dedede;
-}
-
 .card > img{
     margin: 5% 0% 0% 25% !important;
     width: 50% !important;
