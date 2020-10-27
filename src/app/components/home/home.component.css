@@ -17,6 +17,18 @@ h3, h4{
     text-transform: capitalize !important;
 }
 
-.small-font{
-    font-size:12px !important;
+.repo-holder{
+    padding: 2% 2% 2% 2% !important;
+    margin: 0% 2% 2% 4% !important;
+    border: 1px solid #dedede !important;
+    border-top:4px solid #77924b !important;
+}
+
+.repo-holder:hover{
+    cursor: pointer;
+    background-color: #77924b !important;
+}
+
+.repo-name{
+    color: #f48213;
 }

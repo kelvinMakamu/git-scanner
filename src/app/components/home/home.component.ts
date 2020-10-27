@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
-    this.githubService.getUserDetails(environment.USER).subscribe((detail) => {
-      this.user = detail;
+    this.githubService.getUserDetails(environment.USER).subscribe((details) => {
+      this.user = details;
     });
     this.githubService.getUserRepositories(environment.USER).subscribe((detail) => {
       this.repos = detail;
