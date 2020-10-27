@@ -11,12 +11,16 @@ import { User } from '../models/user';
 export class HomeComponent implements OnInit {
   
   user: User;
+  repos: any;
 
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
     this.githubService.getUserDetails(environment.USER).subscribe((detail) => {
       this.user = detail;
+    });
+    this.githubService.getUserRepositories(environment.USER).subscribe((detail) => {
+      this.repos = detail;
     });
   }
 

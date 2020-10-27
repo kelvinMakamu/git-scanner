@@ -23,10 +23,9 @@ export class GithubService {
     return this.httpClient.get<Repository[]>(`${environment.API_URL}/users/${username}/repos`,{ headers });
   }
 
-  getRepository(repo: string): Observable<Repository[]>{
+  getRepository(repo: string,username: string): Observable<Repository[]>{
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
-    let params  = new HttpParams().set('q',repo);
-    return this.httpClient.get<Repository[]>(`${environment.API_URL}/repositories`,{ headers, params });
+    return this.httpClient.get<Repository[]>(`${environment.API_URL}/repos/${username}/${repo}`,{ headers });
   }
 
   constructor(private httpClient: HttpClient) { }
