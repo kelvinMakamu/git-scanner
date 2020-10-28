@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RepoComponent } from './components/repo/repo.component';
 import { UsersComponent } from './components/users/users.component';
 import { NotSelectedComponent } from './components/not-selected/not-selected.component';
+import { RepoDetailsComponent } from './components/repo-details/repo-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NotSelectedComponent } from './components/not-selected/not-selected.com
     HomeComponent,
     RepoComponent,
     UsersComponent,
-    NotSelectedComponent
+    NotSelectedComponent,
+    RepoDetailsComponent
   ],
   imports: [
     BrowserModule,
