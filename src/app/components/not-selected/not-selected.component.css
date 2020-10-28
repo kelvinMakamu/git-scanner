@@ -1,0 +1,16 @@
+.repo-holder{
+    padding: 2% 2% 2% 2% !important;
+    margin: 0% 2% 2% 4% !important;
+}
+
+.repo-name{
+    color: #f48213;
+}
+
+.card-header{
+    background-color: #fff !important;
+}
+
+h3, h4{
+    text-transform: capitalize !important;
+}
