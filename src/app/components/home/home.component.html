@@ -15,8 +15,8 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{ user.login }}</li>
-                        <li class="list-group-item">Repos: {{ user.public_repos }}</li>
-                        <li class="list-group-item">Last Updated: <br>{{ user.updated_at | date }}</li>
+                        <li class="list-group-item">{{ user.public_repos }} Repos</li>
+                        <li class="list-group-item">Modified on <br>{{ user.updated_at | date }}</li>
                       </ul>
                 </div>
             </div>
