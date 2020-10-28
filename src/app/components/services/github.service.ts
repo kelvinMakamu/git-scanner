@@ -28,5 +28,9 @@ export class GithubService {
     return this.httpClient.get<Repository[]>(`${environment.API_URL}/repos/${username}/${repo}`,{ headers });
   }
 
+  getUsersAvailable(): Observable<User[]>{
+    let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
+    return this.httpClient.get<User[]>(`${environment.API_URL}/users`,{ headers });
+  }
   constructor(private httpClient: HttpClient) { }
 }
