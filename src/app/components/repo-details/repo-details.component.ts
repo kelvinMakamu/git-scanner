@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import { Repository } from '../models/repository';
-import { GithubService } from '../services/github.service';
 
 @Component({
   selector: 'app-repo-details',
@@ -11,16 +9,17 @@ import { GithubService } from '../services/github.service';
 })
 export class RepoDetailsComponent implements OnInit {
   
-  repos: Repository[];
+  @Input() repo: Repository;
+  
+  language: string; 
 
-  constructor(private activatedRoute: ActivatedRoute, private githubService: GithubService) { }
+  languageColor: string;
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((param) => {
-      this.githubService.getUserRepositories(param.username).subscribe((details)=>{
-        this.repos = details;
-      })
-    })
+    this.language      = this.repo.language == null ? 'HTML' : this.repo.language;
+    this.languageColor = environment.LANGUAGE_COLORS[this.language].color;
   }
 
 }

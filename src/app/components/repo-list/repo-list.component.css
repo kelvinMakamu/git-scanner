@@ -1,3 +1,15 @@
+.repo-holder{
+    padding: 2.5% 2.5% 2.5% 2.5% !important;
+    margin: 0% 2% 2% 4% !important;
+    border: 1px solid #dedede !important;
+    border-top:4px solid #77924b !important;
+}
+
+.repo-holder:hover{
+    cursor: pointer;
+    background-color: #77924b !important;
+}
+
 .repo-name{
     color: #f48213;
 }
@@ -15,10 +27,6 @@ h3, h4{
     font-size: 13px !important;
 }
 
-.repo-language{
-    margin: 5% 0% 5% 0% !important;
-}
-
 .repo-language-color {
     position: relative !important;
     top: 1px !important;
@@ -29,7 +37,7 @@ h3, h4{
 }
 
 .updated{
-    margin: 5% 0% 5% 0% !important;
+    margin: 3% 0% 3% 0% !important;
     font-size: 12px !important;
 }
 

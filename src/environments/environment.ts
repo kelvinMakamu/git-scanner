@@ -1,12 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { COLORS } from './config';
 
 export const environment = {
   production: false,
   API_KEY: '74e77324cb8fa384f95881c083b80232b752ed4e',
   API_URL: 'https://api.github.com',
-  USER: 'kelvinMakamu'
+  USER: 'kelvinMakamu',
+  LANGUAGE_COLORS: COLORS
 };
 
 /*

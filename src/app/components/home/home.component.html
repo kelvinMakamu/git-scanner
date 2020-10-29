@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-lg-3 col-sm-12">
+        <div class="col-md-4 col-lg-4 col-sm-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="text-center">account</h4>
@@ -15,14 +15,23 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{ user.login }}</li>
-                        <li class="list-group-item">{{ user.public_repos }} Repos</li>
-                        <li class="list-group-item">Modified on <br>{{ user.updated_at | date }}</li>
+                        <li class="list-group-item">{{ user.public_repos }} public repos</li>
+                        <li class="list-group-item updated">Updated {{ user.updated_at | relativeTime }}</li>
                       </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-9 col-lg-9 col-sm-12">
-            <app-repo *ngIf='repos' [repos]='repos'></app-repo>
+        <div class="col-md-8 col-lg-8 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>repositories</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <app-repo *ngIf='repos' [repos]='repos'></app-repo>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     

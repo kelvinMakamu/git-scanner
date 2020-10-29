@@ -10,6 +10,9 @@ import { RepoComponent } from './components/repo/repo.component';
 import { UsersComponent } from './components/users/users.component';
 import { NotSelectedComponent } from './components/not-selected/not-selected.component';
 import { RepoDetailsComponent } from './components/repo-details/repo-details.component';
+import { RelativeTimePipe } from './components/pipes/relative-time.pipe';
+import { RepoLanguageDirective } from './components/directives/repo-language.directive';
+import { RepoListComponent } from './components/repo-list/repo-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { RepoDetailsComponent } from './components/repo-details/repo-details.com
     RepoComponent,
     UsersComponent,
     NotSelectedComponent,
-    RepoDetailsComponent
+    RepoDetailsComponent,
+    RelativeTimePipe,
+    RepoLanguageDirective,
+    RepoListComponent
   ],
   imports: [
     BrowserModule,

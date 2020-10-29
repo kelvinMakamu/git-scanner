@@ -1,1 +1,9 @@
-<app-repo [repos]='repos'></app-repo>
+<p class="repo-name"> {{ repo.name | titlecase }}</p>
+<p class="repo-description">{{ repo.description }}</p>
+<p class="repo-language updated">
+    <span class="updated-left">
+        <span class="repo-language-color" [appRepoLanguage]='languageColor'></span> 
+        {{ repo.language == null ? 'HTML': repo.language }}
+    </span>
+    <span class="updated-right"> Updated {{ repo.updated_at | relativeTime }}</span>
+</p><br>
