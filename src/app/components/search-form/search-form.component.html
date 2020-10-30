@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="form-group">
-                    <label for="searchCategory">Category</label>
+                    <label for="searchCategory">Search By</label>
                     <select class="form-control" required name="searchCategory"
                     [(ngModel)]="model.searchCategory" #searchCategory="ngModel"
                     id="searchCategory">
-                      <option value="repository">Repositories</option>
-                      <option value="username">GitHub Users</option>
+                      <option value="repository">Repository</option>
+                      <option value="username">GitHub User</option>
                     </select>
                 </div>
                 <div [hidden]="searchCategory.valid || searchCategory.pristine"
