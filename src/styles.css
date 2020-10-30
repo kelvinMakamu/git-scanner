@@ -10,7 +10,7 @@ body{
     background-color: #ececec;
 }
 
-input:focus, textarea:focus, input.form-control:focus {
+input:focus, textarea:focus, input.form-control:focus, select:focus {
     outline:none !important;
     outline-width: 0 !important;
     box-shadow: none !important;
@@ -31,4 +31,6 @@ input:focus, textarea:focus, input.form-control:focus {
     box-shadow: 0px 2px 3px #dedede;
 }
 
-
+.card-header{
+    background-color: #fff !important;
+}

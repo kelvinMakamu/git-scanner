@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from  '../../../environments/environment';
 import { User } from '../models/user';
@@ -12,6 +12,21 @@ import { Repository } from '../models/repository';
 export class GithubService {
 
   repos: Repository[];
+
+  searchResults: any;
+
+  searchGithub(searchCategory: string, searchText: string): any {
+    switch(searchCategory){
+      case 'repository':
+      this.searchResults = this.getUserRepositories(searchText);
+      break;
+
+      case 'username':
+      this.searchResults = this.getUserDetails(searchText);
+      break;
+    }
+    return this.searchResults;
+  }
 
   getUserDetails(username: string): Observable<User>{
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
@@ -32,5 +47,6 @@ export class GithubService {
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
     return this.httpClient.get<User[]>(`${environment.API_URL}/users`,{ headers });
   }
+  
   constructor(private httpClient: HttpClient) { }
 }

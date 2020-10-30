@@ -1,0 +1,41 @@
+<div class="col-md-12 col-lg-12 col-sm-12">
+    <form  #searchForm="ngForm"><br>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="form-group">
+                    <label for="searchCategory">Category</label>
+                    <select class="form-control" required name="searchCategory"
+                    [(ngModel)]="model.searchCategory" #searchCategory="ngModel"
+                    id="searchCategory">
+                      <option value="repository">Repositories</option>
+                      <option value="username">GitHub Users</option>
+                    </select>
+                </div>
+                <div [hidden]="searchCategory.valid || searchCategory.pristine"
+                 class="alert alert-danger" role="alert">
+                    Please select category
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="form-group">
+                    <label for="searchText">User/ Repository</label>
+                    <input type="text" class="form-control" required name="searchText"
+                    [(ngModel)]="model.searchText" #searchText="ngModel"
+                     id="searchText" placeholder="Github user/repository" >
+                </div>
+                <div [hidden]="searchText.valid || searchText.pristine"
+                 class="alert alert-danger" role="alert">
+                    Please provide search text
+                </div>
+            </div>
+        </div><br> 
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <input type="submit" value="Search" class="btn btn-success" id="btn-commit"
+                       [disabled]="!searchForm.form.valid" (click)='searchRepository();searchForm.reset();'/>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,9 @@ import { RepoDetailsComponent } from './components/repo-details/repo-details.com
 import { RelativeTimePipe } from './components/pipes/relative-time.pipe';
 import { RepoLanguageDirective } from './components/directives/repo-language.directive';
 import { RepoListComponent } from './components/repo-list/repo-list.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,14 @@ import { RepoListComponent } from './components/repo-list/repo-list.component';
     RepoDetailsComponent,
     RelativeTimePipe,
     RepoLanguageDirective,
-    RepoListComponent
+    RepoListComponent,
+    SearchComponent,
+    SearchFormComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
