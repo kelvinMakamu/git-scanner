@@ -18,10 +18,10 @@ export class SearchComponent implements OnInit {
     .subscribe(
       (details:any) => this.results = details,
       (err:any) => {
-          this.alertService.danger(`<strong>${err.name} !!!</strong> ${err.message}`,environment.ALERT_OPTIONS);
+          this.alertService.danger(`<strong>${err.name}!</strong> ${err.message}`,environment.ALERT_OPTIONS);
           this.emptySearchResults();
         },
-      () => this.alertService.success(`User repositories loaded successfully`,environment.ALERT_OPTIONS)
+      () => this.alertService.success(`Repositories loaded successfully.`,environment.ALERT_OPTIONS)
     );
   }
 

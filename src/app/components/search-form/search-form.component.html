@@ -7,13 +7,13 @@
                     <select class="form-control" required name="searchCategory"
                     [(ngModel)]="model.searchCategory" #searchCategory="ngModel"
                     id="searchCategory">
-                      <option value="repository">Repository</option>
-                      <option value="username">GitHub User</option>
+                      <option value="repository">Repository Name</option>
+                      <option value="username">Github Username</option>
                     </select>
                 </div>
                 <div [hidden]="searchCategory.valid || searchCategory.pristine"
                  class="alert alert-danger" role="alert">
-                    Please select category
+                    Please select search by category
                 </div>
             </div>
         </div><br>

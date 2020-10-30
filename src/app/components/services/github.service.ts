@@ -18,20 +18,25 @@ export class GithubService {
   searchGithub(searchCategory: string, searchText: string): any {
     switch(searchCategory){
       case 'repository':
-      this.searchResults = this.getUserRepositories(searchText.toLowerCase());
+      this.searchResults = this.getRepositoryByRepositoryName(searchText.toLowerCase());
       break;
 
       case 'username':
-      this.searchResults = this.getUserRepositories(searchText.toLowerCase());
+      this.searchResults = this.getRepositoryByUsername(searchText.toLowerCase());
       break;
     }
     return this.searchResults;
   }
 
-  getRepositoryByName(repoName: string): Observable<any>{
+  getRepositoryByRepositoryName(repoName: string): Observable<Repository[]>{
     let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
     let params  = new HttpParams().set('q',repoName);
-    return this.httpClient.get<any>(`${environment.API_URL}/search/repositories`,{ headers, params });
+    return this.httpClient.get<Repository[]>(`${environment.API_URL}/search/repositories`,{ headers, params });
+  }
+
+  getRepositoryByUsername(username: string): Observable<Repository[]>{
+    let headers = new HttpHeaders().set('Authorization',`token ${environment.API_KEY}`);
+    return this.httpClient.get<Repository[]>(`${environment.API_URL}/users/${username}/repos`,{ headers });
   }
 
   getUserDetails(username: string): Observable<User>{
