@@ -17,6 +17,7 @@ import { RepoListComponent } from './components/repo-list/repo-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchResultComponent } from './components/search-result/search-result.
     RepoListComponent,
     SearchComponent,
     SearchFormComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

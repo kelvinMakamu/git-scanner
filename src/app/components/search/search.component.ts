@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../services/github.service';
+import { AlertService } from '../services/alerts/alert.service';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-search',
@@ -13,12 +16,12 @@ export class SearchComponent implements OnInit {
   searchGithub(model: any): any {
     this.githubService.searchGithub(model.searchCategory,model.searchText)
     .subscribe(
-      (details: any) => this.results = details,
-      (err:    any)  => {
-          alert("An Error was experienced");
-          this.emptySearchResults()
+      (details:any) => this.results = details,
+      (err:any) => {
+          this.alertService.danger(`<strong>${err.name} !!!</strong> ${err.message}`,environment.ALERT_OPTIONS);
+          this.emptySearchResults();
         },
-      ()             => alert('loading completed')
+      () => this.alertService.success(`User repositories loaded successfully`,environment.ALERT_OPTIONS)
     );
   }
 
@@ -26,7 +29,7 @@ export class SearchComponent implements OnInit {
     this.results = [];
   }
 
-  constructor(private githubService: GithubService) { }
+  constructor(private githubService: GithubService, private alertService: AlertService) { }
 
   ngOnInit(): void {
   }
